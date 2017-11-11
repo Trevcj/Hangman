@@ -16,8 +16,16 @@
       height: 100%;
     }
 
+    .container-fluid{
+      text-align: center;
+    }
+
     .well {
       background-color: #333333;
+    }
+
+    #word {
+      letter-spacing: 2px;
     }
     
     /* Set black background color, white text and some padding */

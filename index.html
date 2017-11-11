@@ -8,6 +8,7 @@
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
 	
 </head>
 <body>
@@ -26,7 +27,7 @@
 	      <ul class="nav navbar-nav">
 	        <li><a href="#">Ramsey's Guide</a></li>
 	        <li><a href="#">Loss Counsling</a></li>
-	        <li><a href="#">Sausage Recipe</a></li>
+	        <li><a href="http://www.delish.com/cooking/g2027/sausage-recipes-for-dinner/" target="blank">Sausage Recipe</a></li>
 	        
 	      </ul>
 	      <ul class="nav navbar-nav navbar-right">
@@ -40,26 +41,39 @@
   <div class="row content">
     <div class="col-sm-2 sidenav">
     	<h2>Vote for your Ruler!</h2>
-      <p><a href="#"><img id="sidenavImg" src="assets/images/jon.jpg" style="width: 100%"></a></p>
-      <p><a href="#"><img id="sidenavImg" src="assets/images/dany.jpg" style="width: 100%"></a></p>
-      <p><a href="#"><img id="sidenavImg" src="assets/images/ice.jpg" style="width: 100%"></a></p>
-      <p><a href="#"><img id="sidenavImg" src="assets/images/bron.jpg" style="width: 100%"></a></p>
-      <p><a href="#"><img id="sidenavImg" src="assets/images/cersei.jpg" style="width: 100%"></a></p>
+      <p class="well"><a href="https://media1.tenor.com/images/b421f5cfbbbff2f0fca65f745e27687f/tenor.gif?itemid=9084062" target="blank"><img id="sidenavImg" src="assets/images/jon.jpg" style="width: 100%"></a></p>
+      <p class="well"><a href="https://www.awesomegifs.com/wp-content/uploads/Tyrion_slaps_Joffrey.gif" target="blank"><img id="sidenavImg" src="assets/images/dany.jpg" style="width: 100%"></a></p>
+      <p class="well"><a href="https://www.awesomegifs.com/wp-content/uploads/Tyrion_slaps_Joffrey.gif" target="blank"><img id="sidenavImg" src="assets/images/ice.jpg" style="width: 100%"></a></p>
+      <p class="well"><a href="https://www.awesomegifs.com/wp-content/uploads/Tyrion_slaps_Joffrey.gif" target="blank"><img id="sidenavImg" src="assets/images/bron.jpg" style="width: 100%"></a></p>
+      <p class="well"><a href="https://www.awesomegifs.com/wp-content/uploads/Tyrion_slaps_Joffrey.gif" target="blank"><img id="sidenavImg" src="assets/images/cersei.jpg" style="width: 100%"></a></p>
     </div>
     <div id="centerContent" class="col-sm-8 text-left"> 
       <!-- <h1>Welcome</h1> -->
       <img src="assets/images/opening.jpg" style="width: 100%">
       <hr>
-      <h3>Test</h3>
-      <p>Lorem ipsum...</p>
+      <div class="container-fluid">
+      	<h2 id="winLose">Guess the word by typing keys!</h2>
+      	  <button type="button" class="btn" id="start">Start</button>
+	      <h3 id="word">When you play the Game of Hangman, you win or you die!</h3>
+	      <p id="guesses">You know this many nothing's, Jon Snow:<span id="nothing"> 0 </span></p>
+	      <p id="results"></p>
+	      <p id="keysPressed"></p>
+	      <p id="win"></p>
+	      <p id="lose"></p>
+	      <button type="button" class="btn" id="hintBtn">Hint</button>
+	      <p id="hint"></p>
+	  </div>    
     </div>
     <div class="col-sm-2 sidenav">
       <div class="well">
-        <a href="#"><img src="assets/images/serveAd.png" style="width: 100%"></a>
+        <a href="http://gameofthrones.wikia.com/wiki/R%27hllor" target="blank"><img src="assets/images/serveAd.png" style="width: 100%"></a>
       </div>
       <div class="well">
-        <a href="#"><img src="assets/images/joinAd.png" style="width: 100%"></a>
+        <a href="http://gameofthrones.wikia.com/wiki/Night%27s_Watch" target="blank"><img src="assets/images/joinAd.png" style="width: 100%"></a>
       </div>
+      <div>
+      	<a href="#"><img src="assets/images/winter.jpg" style="width: 100%"></a>
+      </div>	
     </div>
   </div>
 </div>  
@@ -69,7 +83,7 @@
 
 
 <footer class="container-fluid text-center">
-  <p>Footer Text</p>
+  <p>Trevor James</p>
 </footer>
 	
 
@@ -79,29 +93,134 @@
 	game interface including the letters guessed the blank word to be filled. -->
 
 	<script type="text/javascript">
-		// create a randomly selected word Tyrion Lannister (293:30 minutes)
+		// create a randomly selected word 
 
-	var wordPool = ["Jon Snow","Daenerys Targaryen","Cersei Lannister","Sansa Stark","Arya Stark","Jaime Lannister","Theon Greyjoy","Samwell Tarly","Jorah Mormont","Petyr Belish","Brienne of Tarth","Davos Seaworth","Bran Stark","Lord Varys","Sandor Clegane","Melisandre","Bronn","Gilly","Daario Naharis","Missandei","Tormund Giantsbane"] // Array of words
-	var picPool = [
-	{}
-	]
-	
-	// var getHint ;          // Word getHint
-	var word ;              // Selected word
-	var guesses = [ ];      // Stored guesses
-	var counter ;           // Count correct guesses
-	var space;              // Number of spaces in word '-'
-	
+		var wordPool = ["Jon Snow","Daenerys Targaryen","Cersei Lannister","Sansa Stark","Arya Stark","Jaime Lannister","Theon Greyjoy","Samwell Tarly","Jorah Mormont","Petyr 'Littlefinger' Belish","Brienne of Tarth","Davos Seaworth","Bran Stark","Lord Varys","Sandor 'The Hound' Clegane","Melisandre","Bronn","Gilly","Daario Naharis","Missandei","Tormund Giantsbane","Tyrion Lannister","Tommen Baratheon","Joffrey Baratheon","Rhaegar Targaryen","Viserion","Drogon","Rhaegal","Khal Drogo","Greyworm","Eddard Stark","Benjen Stark","Osha","Shaggydog","Nimeria","Ghost","Grey Wind","Lady","Summer","Hodor","Gregor 'The Mountain' Clegane","Stanis Baratheon","The Lord of Light", "Jaqen H'ghar","Tywin Lannister","Walder Frey","Ilyn Payne","Olenna Tyrell","Margaery Tyrell","Catelyn Tully"] // Array of words
 		
-		// create an event that every time the user touches a key, the key is then fed into the other script.
-	document.onkeyup = function(event) {
+		var picPool = [
+		"assets/images/firstImg.jpg",
+		"assets/images/secondImg.jpg",
+		"assets/images/thirdImg.jpg",
+		"assets/images/fourthImg.jpg",
+		"assets/images/fifthImg.jpg",
+		"assets/images/sixthImg.jpg",
+		"assets/images/seventhImg.jpg",
+		"assets/images/eighthImg.jpg",
+		"assets/images/ninthImg.jpg",
+		"assets/images/tenthImg.gif"];
+		
+		var word ;              // Selected word
+		// var guesses = 0;      // Stored guesses
+		           // Count correct guesses
+		             // Number of spaces in word '-'
+		var keysPressed = [];
 
-		var userGuess = event.key; //Guess
+		var underscores = [];
+
+		var guessLimit = 10;
+
+		var nothings = 0;
+
+		var currentImg = -1;
+		
+		var match = false;
+
+		var win = 0;
+
+		var lose = 0;
+			
+			// create an event that every time the user touches a key, the key is then fed into the other script.
+		$( document ).ready(function() {
+    		console.log( "ready!" );
+    		$("#start").on("click", function(){
+
+					word = wordPool[Math.floor(Math.random() * wordPool.length)];
+					console.log(word);
+					underscores = word.replace(/[a-zA-Z]/g, "_").split('');
+					console.log(word);
+					$("#word").text(underscores.join(''));
+					$("#start").text("New Word");
+					keysPressed = [];
+					$("#keysPressed").text(keysPressed);
+					nothings = 0;
+					$("#nothing").text(nothings);
+					currentImg = -1;
+					win = 0;
+					lose = 0;
+
+
+				});
+				
+      
+     
+      
+      $(document).keydown(function(e) {
+      	
+
+        if(e.keyCode > 64 && e.keyCode < 91){
+          $("#results").text("You pressed: " + e.key);
+          
+          if($.inArray(e.key, keysPressed) !== -1){
+            $("#results").append("<span class='warning';> - you have pressed this key before!!</span>");
+          }
+          
+          keysPressed.push(e.key);
+          keysPressed = $.unique(keysPressed);
+        } else {
+          
+          $("#results").text("Key not recognized");
+        }
+        
+                
+        $("#keysPressed").text(keysPressed);
+
+
+		
+        
+
+         if (word.toLowerCase().indexOf(e.key) != -1){ // if the character is found
+		  for (var i = 0; i < word.length; i ++){ // loop on all characters
+		     if(e.key === word[i].toLowerCase()) {
+        		underscores[i] = word[i];
+        		console.log(underscores.join(''));
+        		$("#word").text(underscores.join(''));
+		  	};
+			
+			} 
+			
+			} else {
+
+				nothings++;
+
+				currentImg++;
+
+				$("#nothing").text(nothings);
+
+
+			}
+
+			if (underscores.indexOf('_') == -1 ){ // if there are no dashes left
+				  $("#winLose").text("You Win!");
+				  win++;
+				  $("#win").text("Wins: " + win);
+				} else if (nothings == 10){
+				  $("#winLose").text("You Lose!");
+				  lose++;
+				  $("#lose").text("Losses: " + lose);
+				}
+
+        
+      });
+
+     	
 
 
 
-	}
-		 
+		$("#hintBtn").on("click", function(){
+				$("#hint").text("What do we say to hints? " + " Not today!")
+				});
+		
+		});
 
 	</script>
 
